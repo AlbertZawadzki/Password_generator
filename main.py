@@ -19,8 +19,13 @@ question = input("Do you want to generate password? y/n")
 
 if question=="y":
     while True:
-        length = int(input("How long password do you want to receive?"))
-        print(password())
-        answer = input("Is this password satisfied? y/n")
-        if answer=="y":
-            break
+        try:
+            length = int(input("How long password do you want to receive?"))
+            print(password())
+            answer = input("Is this password satisfied? y/n")
+            if answer=="y":
+                break
+        except ValueError:
+            print("Please enter a number")
+
+
